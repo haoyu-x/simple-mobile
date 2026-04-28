@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../stylesheet.css">
+    <link rel="stylesheet" href="css/app.css?v=20250608">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-96CCSDGHTX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'G-96CCSDGHTX');
+    </script>
+
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i&display=swap");
+        @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:300,300i,400,400i,600,600i,700,700i&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..700;1,100..700&display=swap");
+
+        .container {
+            max-width: 810px;
+        }
+
+        .list-inline {
+            list-style: none;
+            margin-left: -0.5em;
+            margin-right: -0.5em;
+            padding-left: 0;
+        }
+
+        .list-inline>li {
+            display: inline-block;
+            margin-left: 0.5em;
+            margin-right: 0.5em;
+        }
+
+        a,
+        a:focus {
+            color: rgb(153, 51, 51); /* mit red */
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: rgb(153, 51, 51); /* mit red */
+            text-decoration: underline;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        b {
+            font-weight: 700;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Asap', roboto, sans-serif;
+            color: rgb(153, 51, 51); /* mit red */
+        }
+
+        h1 {
+            font-weight: 300;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-size: 48px;
+        }
+
+        h2 {
+            font-weight: 300;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            font-size: 32px;
+        }
+
+        h3 {
+            font-weight: 300;
+            font-size: 24px;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .text-small {
+            font-size: 17px;
+        }
+
+        .text-large {
+            font-size: 24px;
+        }
+
+        .text-title {
+            font-size: 40px;
+            font-weight: 700;
+            font-variant: small-caps;
+            font-family: 'Asap', roboto, sans-serif;
+            color: rgb(153, 51, 51); /* mit red */
+        }
+
+        .sm-name {
+            font-variant: small-caps;
+            font-family: 'Asap', roboto, sans-serif;
+            color: rgb(153, 51, 51); /* mit red */
+            font-weight: 700;
+        }
+
+        .text-toplink {
+            font-weight: 400;
+        }
+
+        .hero-links {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .hero-link,
+        .hero-link:focus {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 13px;
+            border: 1px solid rgb(153, 51, 51);
+            border-radius: 999px;
+            background: #ffffff;
+            color: rgb(153, 51, 51);
+            font-family: 'Asap', roboto, sans-serif;
+            font-size: 0.82em;
+            font-weight: 500;
+            line-height: 1.2;
+            text-decoration: none;
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .hero-link:hover {
+            background: rgb(153, 51, 51);
+            color: #ffffff;
+            border-color: rgb(153, 51, 51);
+            text-decoration: none;
+        }
+
+        .teleop-showcase {
+            margin: 1.2em 0 1.6em;
+        }
+
+        .teleop-label {
+            font-size: 0.76em;
+            font-weight: 700;
+            letter-spacing: 0.09em;
+            color: #666666;
+            text-transform: uppercase;
+            margin-bottom: 0.45em;
+        }
+
+        .teleop-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .teleop-grid-three {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .teleop-grid-mixed {
+            grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.3fr) minmax(0, 0.65fr);
+        }
+
+        .teleop-card {
+            border: 1px solid #d9d9d9;
+            border-radius: 8px;
+            background: #ffffff;
+            overflow: hidden;
+        }
+
+        .teleop-card img,
+        .teleop-card video {
+            width: 100%;
+            display: block;
+            background: transparent;
+        }
+
+        .teleop-grid-mixed .teleop-card video {
+            height: 210px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .teleop-grid-mixed .teleop-card.iphone-video video {
+            width: 90%;
+            object-fit: cover;
+            object-position: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .teleop-caption {
+            font-size: 0.72em;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: #666666;
+            padding: 7px 10px;
+            border-top: 1px solid #ececec;
+        }
+
+        @media screen and (max-width: 767px) {
+            .teleop-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .teleop-grid-mixed .teleop-card video {
+                height: auto;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            .teleop-grid-mixed .teleop-card.iphone-video video {
+                width: 50%;
+            }
+        }
+
+        .text-caption {
+            font-size: 20px;
+            display: block;
+        }
+
+        .text-caption-xs {
+            font-size: 14px;
+            display: block;
+        }
+
+        .text-caption-small {
+            font-size: 16px;
+            color: #777777;
+            display: block;
+        }
+
+        .text-equation {
+            font-size: 110%;
+        }
+
+        .text-red {
+            color: #f54254;
+        }
+
+        .text-blue {
+            color: #598be7;
+        }
+
+        .text-tt {
+            font-family: "Source Code Pro", "Lato", Verdana, Helvetica, sans-serif;
+            font-weight: 400;
+        }
+
+        .top0 {
+            margin-top: 0px;
+        }
+
+        .top5 {
+            margin-top: 5px;
+        }
+
+        .top7 {
+            margin-top: 7px;
+        }
+
+        .top10 {
+            margin-top: 10px;
+        }
+
+        .top15 {
+            margin-top: 15px;
+        }
+
+        .top17 {
+            margin-top: 17px;
+        }
+
+        .top20 {
+            margin-top: 20px;
+        }
+
+        .top25 {
+            margin-top: 25px;
+        }
+
+        .top30 {
+            margin-top: 30px;
+        }
+
+        .bottom0 {
+            margin-bottom: 0px;
+        }
+
+        .bottom5 {
+            margin-bottom: 5px;
+        }
+
+        .bottom7 {
+            margin-bottom: 7px;
+        }
+
+        .bottom10 {
+            margin-bottom: 10px;
+        }
+
+        .bottom15 {
+            margin-bottom: 15px;
+        }
+
+        .bottom17 {
+            margin-bottom: 17px;
+        }
+
+        .bottom20 {
+            margin-bottom: 20px;
+        }
+
+        .bottom25 {
+            margin-bottom: 25px;
+        }
+
+        .bottom30 {
+            margin-bottom: 30px;
+        }
+
+        @media screen and (min-width: 992px) {
+            .mobile-only {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 991px) {
+            .desktop-only {
+                display: none;
+            }
+
+            .text-equation {
+                font-size: 100%;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+
+            body,
+            td,
+            th,
+            tr,
+            p,
+            a {
+                font-family: 'Asap', roboto, sans-serif;
+                font-size: 20px;
+            }
+        }
+
+        @media screen and (max-width: 991px) {
+
+            body,
+            td,
+            th,
+            tr,
+            p,
+            a {
+                font-family: 'Asap', roboto, sans-serif;
+                font-size: 19px;
+            }
+
+            .text-title {
+                font-size: 44px;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+        }
+
+        mjx-container[display="true"] {
+            margin: 10px 0 !important;
+        }
+    </style>
+
+    <title>Simple Mobile</title>
+
+    <meta name="author" content="Seohong Park">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <base target="_blank">
+    <link rel="icon" href="assets/favicon.ico" sizes="32x32">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <!-- <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon/favicon-32x32.png"> -->
+    <!-- <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon/favicon-16x16.png"> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            loader: { load: ['[tex]/color'] },
+            tex: { packages: { '[+]': ['color'] } }
+        };
+    </script>
+
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row" style="display: flex; align-items: flex-start; flex-wrap: wrap; margin-top: 125px;">
+            <div class="col-md-6 col-xs-12">
+                <h1 class="text-title" style="margin-top: 00; font-size: 70px;">
+                    Simple Mobile
+                </h1>
+                <ul class="list-inline" style="margin-left: 0;">
+                    <li style="margin-left: 0;">
+                        <a href="https://haoyu-x.github.io/" style="font-size: 1em;">Haoyu Xiong</a><br>MIT CSAIL<br>Apr 2026
+                    </li>
+                </ul>
+                <div class="hero-links">
+                    <a class="hero-link" href="https://github.com/haoyu-x/simple-mobile/tree/main/hardware">Hardware Guide</a>
+                    <a class="hero-link" href="https://github.com/haoyu-x/simple-mobile/tree/main/simple_mobile">Data Collection</a>
+                    <a class="hero-link" href="https://github.com/haoyu-x/simple-mobile/tree/main/diffusion_policy">Model Training</a>
+                    <a class="hero-link" href="https://github.com/haoyu-x/simple-mobile/tree/main/inference">Inference &amp; Deployment</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <img src="assets/simple-mobile-teaser.png" alt="Simple Mobile teaser"
+                    style="width: 100%; object-fit: contain; margin-top:45px; margin-left: -20px; margin-right: auto;">
+            </div>
+        </div>
+
+        <div class="row top15 bottom30">
+            <div class="col-md-12">
+                <h2>Motivation</h2>
+                <p>
+                    Mobile manipulation is not just putting arms on wheels. It introduces a different class of challenges to robotics research, such as partial observability, whole-body control, and human-to-robot interface design for data collection.
+                </p>
+                <p>
+                    In recent years, industry has demonstrated impressive mobile manipulation systems. In academia, however, building such a system from scratch is still engineering-heavy. Researchers often spend significant time on hardware setup, integration, and debugging before they can get to the actual research questions.
+                </p>
+                <p>
+                    <span class="sm-name">Simple Mobile</span> came out of this gap. It is designed for robotics enthusiasts, beginners, and researchers who want to get started with mobile manipulation. With support from hardware vendors, you can now purchase an <a href="https://hexfellow.com/products/maver-l4-l2">out-of-box hardware kit</a> directly, without having to build everything from scratch. We also provide a <a href="https://github.com/haoyu-x/simple-mobile">plug-and-play codebase</a> for the robot control, data collection, model training, and inference.
+                
+                </p>
+                <p>    
+                    <span class="sm-name">Simple Mobile</span> is a byproduct of the author’s research projects, and we put together this tutorial to make getting started a little easier. We hope it encourages more <b>open-source</b> efforts in the community, and ultimately helps build better infrastructure for research.
+                </p>
+
+                
+
+                <h2>Design Choices</h2>
+                <p>
+                    To keep the system simple, we mount two low-cost arms on top of a mobile base, much like <a href="https://mobile-aloha.github.io/">Mobile ALOHA</a>. From there, we choose to: 1) use components that can be purchased <b>directly from hardware vendors</b>, and 2) keep the system compact by using a holonomic<a href="#holonomic-note"><sup>[1]</sup></a> mobile base with a small footprint.
+                </p>
+                <p>
+                    Prior work, such as <a href="https://tidybot2.github.io/">TidyBot++</a> and <a href="https://x.com/tonyzzhao/status/1991204839578300813?s=20">Sunday Robotics</a> has demonstrated the effectiveness of a holonomic mobile base for mobile manipulation, particularly when studying whole-body control. At the same time, building the original TidyBot++ base can be time-consuming, since it involves assembling more than one hundred parts. Fortunately, with support from the hardware vendor, HexFellow provides an <a href="https://hexfellow.com/products/maver-l4-l2">out-of-the-box kit</a> for the TidyBot++ holonomic base and mounting frames. This Hex mobile base retains the same form factor and actuators of the original TidyBot++ mobile base, while offering improved manufacturing quality and reliability.
+            
+                    For the arms, we use <a href="https://i2rt.com/products/yam-6-dof-arm">YAM</a> because it is well documented and supported by a large user community. There are also several similar alternatives, such as <a href="https://arx-x.com/">ARX</a> arms.</p>
+
+                <div class="teleop-showcase">
+                    <div class="teleop-grid teleop-grid-three">
+                        <div class="teleop-card">
+                            <img src="assets/unbox.gif" alt="Unboxing">
+                            <div class="teleop-caption">out-of-box</div>
+                        </div>
+                        <div class="teleop-card">
+                            <img src="assets/hex-base.gif" alt="Hex base">
+                            <div class="teleop-caption">holonomic mobile base</div>
+                        </div>
+                        <div class="teleop-card">
+                            <img src="assets/real-robot.gif" alt="Real Robot">
+                            <div class="teleop-caption">the simple mobile robot</div>
+                        </div>
+                    </div>
+                </div>
+
+                <blockquote id="holonomic-note" style="font-size: 0.7em; line-height: 1.35; margin-top: 0.4em; color: #777777;">
+                    <p><sup>[1]</sup> What is a holonomic mobile robot?<br>
+                    A holonomic mobile robot is a robot whose base can move freely in any direction on a plane without needing to turn first, much like a floating office chair. In practice, this usually means it can move forward and backward, side to side, and rotate, with these motions controlled independently and simultaneously. <a href="https://robotics.stanford.edu/~rah/papers/FSR99.pdf">Read more</a></p>
+                </blockquote>
+
+                <h2>Hardware Components</h2>
+                <p>
+                    The <span class="sm-name">Simple Mobile</span> robot is a self-contained system consisting of: 1) a mobile base, 2) two arms, 3) one head camera and two wrist cameras, 4) a computer, 5) a mounting torso, and 6) a power bank. 
+                Check out the <a href="https://github.com/haoyu-x/simple-mobile/tree/main/hardware"">hardware guide</a> for more details.</p>
+                </p>
+                    
+
+                <div style="display: flex; justify-content: center; align-items: center; gap: 16px; margin: 1.5em 0;">
+                    <img src="assets/simple-mobile-system_2.png" alt="Simple Mobile system"
+                        style="height: 450px; width: auto; object-fit: contain; display: block;">
+                </div>
+              
+                
+                <h2>Data Collection</h2>
+                <p>
+                    To keep data collection simple, without requiring additional devices, we adapt the iPhone teleoperation interface from the one used in TidyBot++. 
+                </p>
+                <p>
+                    We have a joystick pad on the iPhone to control the velocities of the mobile base, and use the 6-DOF pose tracking of the iPhone to control the robot arms.
+                </p>
+                <p>
+                    Checkout the <a href="https://github.com/haoyu-x/simple-mobile/tree/main/simple_mobile">data collection guide</a> for more details about the teleoperation interface and data collection pipeline.
+                </p>
+                <div class="teleop-showcase">
+                    <div class="teleop-grid teleop-grid-mixed">
+                        <div class="teleop-card">
+                            <video autoplay loop muted playsinline preload="metadata" controls>
+                                <source src="assets/teleop2.mp4" type="video/mp4">
+                            </video>
+                            <div class="teleop-caption">mobile base teleop</div>
+                        </div>
+                        <div class="teleop-card">
+                            <video autoplay loop muted playsinline preload="metadata" controls>
+                                <source src="assets/teleop3.mp4" type="video/mp4">
+                            </video>
+                            <div class="teleop-caption">mobile base teleop</div>
+                        </div>
+                        <div class="teleop-card iphone-video">
+                            <video autoplay loop muted playsinline preload="metadata" controls>
+                                <source src="assets/iphone2.MP4" type="video/mp4">
+                            </video>
+                            <div class="teleop-caption">iphone interface</div>
+                        </div>
+                        <div class="teleop-card">
+                            <video autoplay loop muted playsinline preload="metadata" controls>
+                                <source src="assets/teleop1.mp4" type="video/mp4">
+                            </video>
+                            <div class="teleop-caption">arm teleop</div>
+                        </div>
+                        <div class="teleop-card">
+                            <video autoplay loop muted playsinline preload="metadata" controls>
+                                <source src="assets/teleop4.mp4" type="video/mp4">
+                            </video>
+                            <div class="teleop-caption">arm teleop</div>
+                        </div>
+                        <div class="teleop-card iphone-video">
+                            <video autoplay loop muted playsinline preload="metadata" controls>
+                                <source src="assets/iphone1.MP4" type="video/mp4">
+                            </video>
+                            <div class="teleop-caption">iphone interface</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <h2>Training a Diffusion Policy</h2>
+                <p>
+                    We provide a plug-and-play codebase for training a diffusion policy on the collected data. 
+                    
+                    The diffusion policy takes three camera views as input, including one from the head camera and two from the wrist cameras, along with the proprioceptive state of the arm poses. It outputs velocity commands for the mobile base and pose commands for the arms, which are then executed by the robot’s low-level controller.
+
+                    Checkout the <a href="https://github.com/haoyu-x/simple-mobile/tree/main/diffusion_policy">model training guide</a> for more details about the training and inference pipelines.
+                </p>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 16px; margin: 1.5em 0;">
+                    <img src="assets/policy.png" alt="Simple Mobile system"
+                        style="height: 160px; width: auto; object-fit: contain; display: block;">
+                </div>
+
+                <h2>Getting the Hardware Kit</h2>
+                <p>
+                    HexFellow provides an out-of-box kit for the mobile base and mounting frames, which can be purchased directly from <a href="https://hexfellow.com/products/maver-l4-l2">their website</a>. The arms can be purchased from the <a href="https://i2rt.com/products/yam-6-dof-arm">arm vendor</a>, and the rest of the components can be purchased from Amazon online retailers. Check out the <a href="https://github.com/haoyu-x/simple-mobile/tree/main/hardware">hardware guide</a> for more details.
+
+                </p>
+                <p> 
+                    Fill the <a href="https://forms.gle/ttTPvXhsdid41Zc47">form</a> if you are interested in the hardware kit, and we can help accelerate the process.
+                </p>
+
+                <h2>Acknowledgment</h2>
+                <p>
+                    I would like to thank <a href="https://jimmyyhwu.github.io/">Jimmy Wu</a> for his helpful feedback on this tutorial.
+                    The code is adapted from <a href="https://tidybot2.github.io/">TidyBot++</a>, <a href="https://pyroki-toolkit.github.io/">PyRoki</a> and the design draws
+                    inspiration from
+                    <a href="https://vision-in-action.github.io/">Vision in Action</a>,
+                    <a href="https://tidybot2.github.io/">TidyBot++</a>, and
+                    <a href="https://open-world-mobilemanip.github.io/">CMU Door Opening Project</a>.
+                </p>
+
+                <!-- <p>
+                    Please cite these papers if you find this project useful:
+                </p>
+                <div style="position: relative;">
+                    <button type="button" onclick="copyCite(this)"
+                        style="position: absolute; top: 8px; right: 8px; padding: 4px 10px; font-size: 13px; background: #f5f5f5; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; color: #333;">
+                        Copy
+                    </button>
+                    <pre class="codebox-pre"><code id="cite-bibtex" class="language-bibtex codebox-code">@article{xiong2025via,
+  title = {Vision in Action: Learning Active Perception from Human Demonstrations},
+  author = {Haoyu Xiong and Xiaomeng Xu and Jimmy Wu and Yifan Hou and Jeannette Bohg and Shuran Song},
+  journal = {arXiv preprint arXiv:2506.15666},
+  year = {2025}
+}
+
+@inproceedings{wu2024tidybot,
+  title = {TidyBot++: An Open-Source Holonomic Mobile Manipulator for Robot Learning},
+  author = {Wu, Jimmy and Chong, William and Holmberg, Robert and Prasad, Aaditya and Gao, Yihuai and Khatib, Oussama and Song, Shuran and Rusinkiewicz, Szymon and Bohg, Jeannette},
+  booktitle = {Conference on Robot Learning},
+  year = {2024}
+}
+
+@article{xiong2024adaptive,
+  title = {Adaptive Mobile Manipulation for Articulated Objects In the Open World},
+  author = {Xiong, Haoyu and Mendonca, Russell and Shaw, Kenneth and Pathak, Deepak},
+  journal = {arXiv preprint arXiv:2401.14403},
+  year = {2024}
+}</code></pre> -->
+                </div>
+                <script>
+                    function copyCite(btn) {
+                        const text = document.getElementById('cite-bibtex').innerText;
+                        navigator.clipboard.writeText(text).then(() => {
+                            const original = btn.innerText;
+                            btn.innerText = 'Copied!';
+                            setTimeout(() => { btn.innerText = original; }, 1500);
+                        });
+                    }
+                </script>
+                
+
+            </div>
+        </div>
+
+        <div style="height: 40px;"></div>
+
+        <script>
+            // Keep native controls enabled on all devices so users can view time and scrub.
+        </script>
+    </div>
+</body>
+
+</html>

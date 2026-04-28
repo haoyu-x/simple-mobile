@@ -1,0 +1,76 @@
+name: robodiff
+channels:
+  - pytorch
+  - pytorch3d
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - numpy=1.26.4
+  - pip=22.2.2
+  - cudatoolkit=11.6
+  - pytorch=1.12.1
+  - torchvision=0.13.1
+  - pytorch3d=0.7.0
+  - opencv=4.7.0
+  - ffmpeg=5.1.2
+  - cffi=1.15.1
+  - ipykernel=6.16
+  - zarr=2.12.0
+  - numcodecs=0.10.2
+  - hydra-core=1.2.0
+  - einops=0.4.1
+  # - tqdm=4.64.1
+  - dill=0.3.5.1
+  - scikit-video=1.1.11
+  - scikit-image=0.19.3
+  # - wandb=0.13.3
+  - shapely=1.8.4
+  - cython=0.29.32
+  - imageio=2.22.0
+  - termcolor=2.0.1
+  # - tensorboard=2.10.1
+  # - tensorboardx=2.5.1
+  - psutil=5.9.2
+  - click=8.1.8
+  - boto3=1.24.96
+  - accelerate=0.13.2
+  - datasets=2.6.1
+  - diffusers=0.11.1
+  # - av=10.0.0
+  - cmake=3.24.3
+  # trick to avoid cpu affinity issue described in https://github.com/pytorch/pytorch/issues/99625
+  - llvm-openmp=14
+  # trick to force reinstall imagecodecs via pip
+  # - imagecodecs==2022.8.8
+  - pip:
+    # requires mujoco py dependencies libosmesa6-dev libgl1-mesa-glx libglfw3 patchelf
+    # - pytorchvideo==0.1.5
+    # pip package required for jpeg-xl
+    - imagecodecs==2023.1.23
+    - huggingface_hub==0.25.1 
+    - threadpoolctl==3.6.0  # Limit numpy multithreading
+    - scipy==1.15.2
+    - h5py==3.16.0
+    - tqdm==4.67.3
+    # Robotics
+    - robomimic==0.2.0
+    - mujoco==3.3.5
+    - ruckig==0.15.3
+    # Communication
+    - flask==3.0.2
+    - flask_socketio==5.3.6
+    - pyzmq==27.1.0
+    # Mobile base
+    - pygame==2.6.1
+    - wandb==0.25.1
+    - numba==0.65.0
+    - gdown==5.2.1
+    - python-can==4.6.1
+    - dm-env==1.6
+    - hex_device==1.3.19
+    - jax==0.6.2
+    - jaxlie==1.5.0
+    - depthai==3.5.0
+    
+
