@@ -33,6 +33,8 @@ Hardware setup can be tedious, **Simple Mobile** is designed to make the process
 ## Table of Contents
 This tutorial walks you through hardware setup, data collection, training a diffusion policy, and deploying the model on the robot.
 
+📚 <a href="https://haoyu-x.github.io/simple-mobile/">Tutorial Page/a> 
+
 🛠️ <a href="/hardware">Hardware Guide</a> 
 
 🎮 <a href="/simple_mobile">Teleop & Data Collection</a> 
