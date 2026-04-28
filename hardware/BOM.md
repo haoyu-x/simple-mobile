@@ -42,7 +42,6 @@ If you already have a Tidybot++ base, you can also purchase the Torso Mounting p
 
 For the arms, we use [YAM](https://i2rt.com/products/yam-6-dof-arm) because it is well documented and supported by a large user community. 
 
-### Arms
 | Item                | URL | Unit Cost | Quantity | Total Cost | Notes |
 |---------------------|-----|-----------|----------|------------|-------|
 | YAM   |[YAM](https://i2rt.com/products/yam-6-dof-arm)| $2999 | 2 | $5998 | - |
